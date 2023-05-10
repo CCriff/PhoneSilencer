@@ -12,6 +12,12 @@
 	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+    <string>We use your location to determine if you are in a designated silent zone while using the app.</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>We use your location to determine if you are in a designated silent zone, even when the app is running in the background.</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>We use your location to determine if you are in a designated silent zone, even when the app is not active.</string>
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleSignature</key>
@@ -51,5 +57,9 @@
 	<false/>
   <key>UIStatusBarStyle</key>
   <string>UIStatusBarStyleDefault</string>
+  <key>UIBackgroundModes</key>
+  <array>
+      <string>location</string>
+  </array>
 </dict>
 </plist>

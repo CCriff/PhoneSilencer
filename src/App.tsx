@@ -1,30 +1,27 @@
-import { StyleSheet, Text } from 'react-native'
+// App.tsx
+// Path: src\App.tsx
+import React from 'react'
+import { Provider as PaperProvider } from 'react-native-paper'
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 
+import useGeofencing from './hooks/useGeofencing'
+import StackNavigator from './navigation/StackNavigator'
+import SilentZonesProvider, { useSilentZoneContext } from './types/Contexts/SilentZoneContext'
+
+import styles from './App.styles'
+
 export default function App() {
+  const { silentZones } = useSilentZoneContext()
+  // useGeofencing(silentZones)
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
-        <Text style={styles.emoji}>😻</Text>
-        <Text style={styles.text}>Open src/App.tsx to start working on your app!</Text>
-        <Text>Happy hacking! 🙌🏻</Text>
+        <PaperProvider>
+          <SilentZonesProvider>
+            <StackNavigator />
+          </SilentZonesProvider>
+        </PaperProvider>
       </SafeAreaView>
     </SafeAreaProvider>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  text: {
-    marginBottom: 8
-  },
-  emoji: {
-    fontSize: 82,
-    marginBottom: 24
-  }
-})

@@ -1,8 +1,61 @@
 {
   "expo": {
-    "name": "PhoneSilencer",
-    "slug": "PhoneSilencer",
+    "plugins": [
+      [
+        "expo-av",
+        {
+          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "web": {
+            "geolocationErrorMessage": "Geolocation permission denied. Enable it in Settings > Privacy > Location Services.",
+            "geolocationEnabled": true,
+            "watchPositionImpl": "Polyfill"
+          },
+          "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location.",
+          "locationWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location.",
+          "locationBackgroundPermission": "Allow $(PRODUCT_NAME) to use your location in the background."
+        }
+      ]
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Your app needs access to your location to provide geofencing services.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Your app needs access to your location to provide geofencing services in the background.",
+        "NSLocationAlwaysUsageDescription": "Your app needs access to your location to provide geofencing services in the background.",
+        "UIBackgroundModes": [
+          "location",
+          "fetch",
+          "audio"
+        ]
+      }
+    },
+    "android": {
+      "permissions": [
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_BACKGROUND_LOCATION"
+      ],
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.ccriff.PhoneSilencerApp"
+    },
+    "name": "PhoneSilencerApp",
+    "slug": "PhoneSilencerApp",
     "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
     "assetBundlePatterns": [
       "**/*"
     ]

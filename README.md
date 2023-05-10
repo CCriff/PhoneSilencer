@@ -1,41 +1,44 @@
-<p align="center">
-  An opinionated template that will allow you to start a new React Native project quickly with TypeScript, Prettier, ESLint, and some custom configurations that will make development process better. 💖
-</p>
+# Phone Silencer App
 
-<h1 align="center">Expo Bare TypeScript</h1>
-<br>
-
-Using [Expo 46](https://blog.expo.dev/expo-sdk-46-c2a1655f63f7). 
-
-Please read [Starting React Native Project in 2022](https://dev.to/vladimirvovk/starting-a-react-native-project-in-2022-31m7) article for details. 
-
-## Quick start
-
-1. Install [Expo CLI](https://docs.expo.dev/get-started/installation/) with `npm install --global expo-cli` or `yarn global add expo-cli`.
-2. Create new React Native project with `expo init --template @vladimir-vovk/expo-bare-typescript`.
-3. Change directory to your project's folder with `cd <your-project-name>`.
-4. Run Metro Bundler with `yarn start`.
-5. Build and run the project with `yarn ios` or `yarn android`.
-
-Happy hacking! 🤓
+Phone Silencer App is a React Native application that automatically silences your phone based on your location and
+user-defined settings. The app aims to provide a seamless and convenient experience for users, allowing them to focus on
+their activities without worrying about manually silencing their phone in specific locations.
 
 ## Features
 
-- [TypeScript](https://www.typescriptlang.org/).
-- Absolute path imports (e.g. `import { ComponentA } from 'src/components/A'`).
-- [Prettier](https://prettier.io/).
-- Automaticaly sort imports on save.
-- [Remove React imports](https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html).
-- Check code for errors with [TypeScript compiler](https://www.typescriptlang.org/tsconfig#noEmit) and [ESLint](https://eslint.org/).
-- Generate changelog with [standard-version](https://github.com/conventional-changelog/standard-version).
-- Lint commits with [Husky](https://github.com/typicode/husky).
-- [react-native-safe-area-context](https://github.com/th3rdwave/react-native-safe-area-context).
+- GPS-based location services for automatic phone silencing
+- User-defined location silencing with customizable radius and time-based rules
+- Schedule for location-based silencing
+- Call/SMS contact exceptions (whitelist)
+- Silent mode display settings with a log of silenced periods/alerts
+- White or blacklisting certain time periods
+- Battery optimization settings
+- Pick specific apps that can temporarily un-silence the phone
+- Multiple modes: silent, vibrate, or none
 
-## Available commands
+## Installation
 
-- `yarn start` - start Metro Bundler.
-- `yarn ios` - build and run iOS.
-- `yarn android` - build and run Android.
-- `yarn web` - run on web.
-- `yarn lint` - check code for errors.
-- `yarn release` - generate a changelog, bump the version of app and create a new tag.
+1. Ensure you have [Node.js](https://nodejs.org/en/) and [Expo CLI](https://docs.expo.dev/get-started/installation/)
+   installed on your system.
+2. Clone the repository: `git clone https://github.com/CCriff/PhoneSilencerApp.git`
+3. Navigate to the project folder: `cd PhoneSilencerApp`
+4. Install dependencies: `npm install` or `yarn install`
+5. Start the Expo development server: `expo start`
+
+## Usage
+
+1. Install the Expo Go app on your mobile device from
+   the [App Store](https://apps.apple.com/app/apple-store/id982107779)
+   or [Google Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=www).
+2. Scan the QR code displayed in your terminal or browser after starting the Expo development server.
+3. The Phone Silencer App will launch on your mobile device. Ensure that your device is connected to the same network as
+   your development machine.
+
+## Contributing
+
+Please read [CONTRIBUTING.md](https://github.com/CCriff/PhoneSilencerApp/blob/main/CONTRIBUTING.md) for details on our
+code of conduct and the process for submitting pull requests.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
